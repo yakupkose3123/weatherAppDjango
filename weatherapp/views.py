@@ -33,16 +33,24 @@ def home(request):
         content = response.json()
         data = {
             # 'city': content['name'],
-            'city': city,
+            'city': city, #Burada delete işleminde id lazım olacağı için API den değil de DB deki city i kullandık.
             'temp': content['main']['temp'],
             'icon' : content['weather'][0]['icon'],
             'desc' : content['weather'][0]['description'],
         }
         city_data.append(data)
-        pprint(city_data)
+        # pprint(city_data)
         
     context = {
         'city_data': city_data,
     }
     
     return render(request, "weatherapp/home.html", context)
+
+
+
+def delete_city(request, id):
+    city = get_object_or_404(City, id=id)
+    city.delete()
+    messages.success(request, 'City deleted!')
+    return redirect('home')

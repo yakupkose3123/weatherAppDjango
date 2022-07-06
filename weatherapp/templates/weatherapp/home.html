@@ -6,7 +6,7 @@
         {{ message }}
     {% endfor %}
 {% endif %}
-<br><br>
+<br>
 
 <form action="" method="get">
     <input type="text" name="name">
@@ -20,7 +20,7 @@
     <img src="http://openweathermap.org/img/wn/{{ city.icon }}.png" alt="Icon"> <br>
     {{ city.desc }} <br>
     <button>
-       <a href="{#}">Delete</a> 
+       <a href="{% url 'delete' city.city.id %}">Delete</a> 
     </button>
     <hr>
 {% endfor %}
