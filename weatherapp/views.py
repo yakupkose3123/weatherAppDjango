@@ -28,7 +28,7 @@ def home(request):
     city_data = []
     cities = City.objects.all() #DB deki tüm city leri çek
     for city in cities: #Her bir city için API den veriyi çek, datayı city_data listesine ekle
-        url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric&lang=tr&"
         response = requests.get(url)
         content = response.json()
         data = {
