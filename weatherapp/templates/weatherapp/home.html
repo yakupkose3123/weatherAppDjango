@@ -15,12 +15,12 @@
 
 <body>
 
-    <nav class="navbar navbar-dark bg-primary">
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
         <div class="container-fluid">
-          <a class="navbar-brand">WEATHER APP</a>
+          <a class="navbar-brand ms-4"><h1>WEATHER APP</h1></a>
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="name">
-            <button class="btn btn-outline-success text-light" type="submit">Search</button>
+            <input class="form-control me-2" type="search" placeholder="City Search" aria-label="Search" name="name">
+            <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
     </nav>  
@@ -37,9 +37,9 @@
     </div>
 
 
-    <div class="row mt-5 ms-1" >
+    <div class="row mt-5 ms-3" >
         {% for city in city_data %}
-        <div class="col-lg-2 col-md-3 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 13rem; height: 20rem; ">
                 <img src="http://openweathermap.org/img/wn/{{ city.icon }}.png" class="card-img-top" alt="post_image" style="width:5rem; height: 3rem; align-self:center;">
                 <hr>

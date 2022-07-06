@@ -34,7 +34,7 @@ def home(request):
         data = {
             # 'city': content['name'],
             'city': city, #Burada delete işleminde id lazım olacağı için API den değil de DB deki city i kullandık.
-            'temp': content['main']['temp'],
+            'temp': round(int(content['main']['temp'])),
             'icon' : content['weather'][0]['icon'],
             'desc' : content['weather'][0]['description'],
         }
